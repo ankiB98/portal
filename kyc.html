@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">   
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+    
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+    
+        .form-container {
+            width: 90vw;
+            max-width: 1200px;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        /* Logo Section (aligned to the right) */
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            z-index: 10;
+        }
+    
+        .logo img {
+            max-width: 100px;
+            height: auto;
+        }
+    
+        @media (max-width: 768px) {
+            .logo img {
+                max-width: 80px;
+            }
+        }
+    
+        /* Form Header */
+        .form-header {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+    
+        .form-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+        }
+    
+        .form-header p {
+            font-size: 14px;
+            margin-top: 7px;
+            color: #666;
+        }
+    
+        /* Form Content */
+        .form-content {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+    
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+    
+        .form-group {
+            margin-bottom: 15px;
+        }
+    
+        label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+    
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+    
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+    
+        .file-upload-section {
+            margin-bottom: 15px;
+        }
+    
+        .file-upload {
+            font-size: 14px;
+            color: #666;
+        }
+    
+        /* Footer Buttons and Captcha */
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+    
+        .captcha {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    
+        .captcha input {
+            margin-right: 5px;
+        }
+    
+        .submit-btn {
+            background-color: #3b3b8c;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .submit-btn:hover {
+            background-color: #2a2a6a;
+        }
+    
+        @media (max-width: 768px) {
+            .form-content {
+                flex-direction: column;
+            }
+    
+            .form-footer {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+    
+            .captcha {
+                justify-content: center;
+            }
+    
+            .form-header h2 {
+                font-size: 20px;
+            }
+    
+            .form-header p {
+                font-size: 12px;
+            }
+    
+            .form-container {
+                padding: 15px;
+            }
+    
+            input[type="text"],
+            input[type="email"],
+            select,
+            textarea {
+                font-size: 13px;
+            }
+    
+            .submit-btn {
+                font-size: 14px;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .form-header h2 {
+                font-size: 18px;
+            }
+    
+            .logo {
+                top: 5px;
+                right: 10px;
+            }
+    
+            .logo img {
+                max-width: 60px;
+            }
+    
+            .form-footer {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="form-container">
+        <!-- Logo Section (aligned to the right) -->
+        <div class="logo">
+            <img src="logo.png" alt="Company Logo">
+        </div>
+
+        <!-- Form Header -->
+        <div class="form-header">
+            <h2>We want to hear from you</h2>
+            <p>Please fill out your project information below; we will respond in the order in which new cases are
+                received.</p>
+        </div>
+
+        <!-- Form Content -->
+        <form id="kyc-form">
+            <div class="form-content">
+                <!-- Left Column -->
+                <div class="column">
+                    <div class="form-group">
+                        <label for="contact-name">Contact Name *</label>
+                        <input type="text" id="contact-name" name="contact_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-number">Contact No. *</label>
+                        <input type="text" id="contact-number" name="contact_number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="org-name">Organization Name *</label>
+                        <input type="text" id="organization-name" name="organization_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="offering">State *</label>
+                        <select id="offering" name="offering" required>
+
+                            <!---------------------------------- States ---------------------------------->
+                            <option value="">--Select--</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="column">
+                    <div class="form-group">
+                        <label for="service-request">Service Request *</label>
+                        <select id="service-request" name="service_request" required>
+                            <option value="">--None--</option>
+                            <!-- Services -->
+                            <option value="Refurbishment Services">Refurbishment Services</option>
+                            <option value="Annual Maintenance Contract">Annual Maintenance Contract</option>
+                            <option value="Preventive and Predictive Maintenance Services">Preventive and Predictive
+                                Maintenance Services</option>
+                            <option value="Installation and Commissioning Services">Installation and Commissioning
+                                Services</option>
+                            <option value="Spare Parts Solutions">Spare Parts Solutions</option>
+                            <option value="Energy Efficiency Consultation">Energy Efficiency Consultation</option>
+                            <option value="Open Gear Manufacturing">Open Gear Manufacturing</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product">Product *</label>
+                        <select id="product" name="product" required>
+                            <option value="">--None--</option>
+                            <!-- Services -->
+                            <option value="Gear Box">Gear Box</option>
+                            <option value="Fluid Coupling">Fluid Coupling</option>
+                            <option value="Geared Motor">Geared Motor</option>
+                            <option value="Solar Panel cleaning Robot">Solar Panel cleaning Robot</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="details">Add the query in details:</label>
+                        <textarea id="details" name="details"></textarea>
+                    </div>
+                    <div class="file-upload-section">
+                        <label class="file-upload" for="file-upload">Attach a file:</label>
+                        <input type="file" id="file-upload" name="file_upload" accept=".pdf,.doc,.jpg,.png">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Footer -->
+            <div class="form-footer">
+                <div class="captcha">
+                    <input type="checkbox" required> I am not a robot
+                </div>
+                <button class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('kyc-form');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Save user data to localStorage
+            const userName = document.getElementById('contact-name').value;
+            const userEmail = document.getElementById('email').value;
+
+            localStorage.setItem('userName', userName);
+            localStorage.setItem('userEmail', userEmail);
+
+            // Redirect to showFinal.html
+            window.location.href = "finalShow.html";
+        });
+    </script>
+
+</body>
+
+</html>

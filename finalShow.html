@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sampark Portal - Thank You</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .text-section h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #4caf50;
+        }
+
+        .text-section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .images-section {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+
+        .bottom-img {
+            width: 220px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bottom-img-care {
+            width: 260px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bottom-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .bottom-img-care:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <img src="logo.png" alt="Company Logo" class="logo">
+        </div>
+
+        <!-- Heading and Subheading -->
+        <div class="text-section">
+            <h1>Thank You <span id="userName"></span>!</h1>
+            <p>Thank you for submitting the support request. We will reach out to you soon.
+                <br>You’ll receive an email confirmation at <span id="userEmail"></span>!
+            </p>
+        </div>
+
+        <!-- Bottom Images -->
+        <div class="images-section">
+            <img src="transmissionlogo.png" alt="Transmission Logo" class="bottom-img">
+            <img src="premium-motion.png" alt="Premium Motion Logo" class="bottom-img-care">
+            <img src="carelogo.png" alt="Care Logo" class="bottom-img">
+        </div>
+    </div>
+
+    <script>
+        // Retrieve form data from localStorage
+        const name = localStorage.getItem('userName') || ''; // Default to empty if not found
+        const email = localStorage.getItem('userEmail') || '';
+
+        // Update page content dynamically
+        if (name) {
+            document.getElementById('userName').textContent = `, ${name}`;
+        }
+
+        if (email) {
+            document.getElementById('userEmail').textContent = email;
+        }
+
+        setTimeout(() => {
+            window.location.href = 'home.html'; // Replace 'home.html' with the URL of your home screen
+        }, 5000);
+
+    </script>
+</body>
+
+</html>
